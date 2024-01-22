@@ -1,0 +1,27 @@
+// EX-GROUP BY
+
+SELECT COUNT(`id`), YEAR(`enrolment_date`) FROM `students` GROUP BY YEAR(`enrolment_date`);
+
+SELECT COUNT(`id`), `office_address` FROM `teachers` GROUP BY `office_address`;
+
+SELECT `exam_id`, AVG(`vote`) FROM `exam_student` GROUP BY `exam_id` HAVING AVG(`vote`);
+
+SELECT COUNT(`id`), `department_id` FROM `degrees` GROUP BY `department_id`;
+
+// EX-SELECT
+
+SELECT `id`, YEAR(`date_of_birth`) FROM `students` WHERE YEAR(`date_of_birth`) = 1990;
+
+SELECT `id`, `cfu` FROM `courses` WHERE `cfu` > 10;
+
+SELECT `id`, `date_of_birth` FROM `students` WHERE YEAR(`date_of_birth`) < 1994;
+
+SELECT `id`, `period`, `year` FROM `courses` WHERE `period` = 'I semestre' AND `year` = 1;
+
+SELECT `id`, `date`, `hour` FROM `exams` WHERE HOUR(`hour`) > 14 AND `date` = '2020-06-20';
+
+SELECT `id`, `level` FROM `degrees` WHERE `level` = 'magistrale';
+
+SELECT COUNT(`id`) FROM `departments`;
+
+SELECT COUNT(`id`) FROM `teachers` WHERE `phone` IS NULL;
